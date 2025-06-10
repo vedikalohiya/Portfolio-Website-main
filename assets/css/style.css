@@ -1285,3 +1285,110 @@ body.dark-mode {
 .footer {
   background: var(--footer-bg);
 }
+
+/* Projects Section */
+.projects {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.projects .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.projects .box {
+    background: var(--bg-color);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.projects .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.projects .box .image {
+    height: 20rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.projects .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.projects .box .content {
+    padding: 2rem;
+}
+
+.projects .box .content h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.projects .box .content p {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.projects .box .content .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.projects .box .content .tech-stack span {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background: var(--main-color);
+    color: var(--white);
+    border-radius: 0.5rem;
+}
+
+.projects .box .content .project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.projects .box .content .project-links .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.projects .box .content .project-links .btn i {
+    font-size: 1.6rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects .box-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects .box .image {
+        height: 25rem;
+    }
+}
+
+input[type="email"] {
+  text-transform: lowercase;
+}

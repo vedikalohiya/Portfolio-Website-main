@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<!-- Your JS file that uses emailjs -->
+<script src="assets/js/script.js"></script>
+
     <!-- Favicon -->
     <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
     <title>Portfolio | Vedika Lohiya</title>
@@ -23,7 +29,7 @@
 
 <!-- navbar starts -->
 <header>
-        <a href="/" class="logo"><i class="fab fa-node-js"></i> Vedika</a>
+        <a href="/" class="logo"><i class="fab fa-react-js"></i> Vedika Lohiya</a>
 
         <div id="menu" class="fas fa-bars"></div>
         <nav class="navbar">
@@ -32,6 +38,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -71,11 +78,11 @@
     <div class="row">
 
     <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/photo1.jpg" alt="">
+        <img draggable="false" class="tilt" src="./assets/images/photo.jpg" alt="">
     </div>
     <div class="content">
         <h3>I'm Vedika</h3>
-        <span class="tag">Web Developer</span>
+        <span class="tag">Full-Stack Developer</span>
         
         <p>I am a passionate Web Developer.
           Currently pursuing B.Tech in Information Technology
@@ -231,6 +238,54 @@
 </section>
 <!-- education section ends -->
 
+<!-- projects section starts -->
+<section class="projects" id="projects">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> My <span>Projects</span></h2>
+
+    <div class="box-container">
+        <!-- Project 1 -->
+        <div class="box">
+            <div class="image">
+                <img draggable="false" src="./assets/images/projects/portfolio.PNG" alt="">
+            </div>
+            <div class="content">
+                <h3>Personal Portfolio Website</h3>
+                <p>A modern, responsive portfolio website showcasing my skills, education, and projects. Features a clean and professional design with smooth animations, interactive elements, and a contact form. The website is optimized for all devices and includes sections for skills, education, projects, and contact information.</p>
+                <div class="tech-stack">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Font Awesome</span>
+                    <span>Particles.js</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/vedikalohiya/Portfolio-Website" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Live</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="box">
+            <div class="image">
+                <img draggable="false" src="./assets/images/projects/Project2.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Project Name</h3>
+                <p>Description of your project goes here. Explain what the project does, technologies used, and your role in it.</p>
+                <div class="tech-stack">
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>Express</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Live</a>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- projects section ends -->
 
 <!-- contact section starts -->
 <section class="contact" id="contact">
@@ -244,29 +299,32 @@
       </div>
     <form id="contact-form">
       
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
-          <i class='fas fa-user'></i>
+      <form id="contact-form">
+        <div class="form-group">
+          <div class="field">
+            <input type="text" name="name" placeholder="Name" required />
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="field">
+            <input type="email" name="email" placeholder="Email" required />
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="field">
+            <input type="text" name="phone" placeholder="Phone" />
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="message">
+            <textarea placeholder="Message" name="message" required></textarea>
+            <i class="fas fa-comment-dots"></i>
+          </div>
         </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
+        <div class="button-area">
+          <button type="submit">
+            Submit <i class="fa fa-paper-plane"></i>
+          </button>
         </div>
-        <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
+      </form>
+      
   </div>
   </div>
 </section>
@@ -289,13 +347,12 @@
           <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
           <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
           <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
+          <a href="#projects"><i class="fas fa-chevron-circle-right"></i> projects</a>
+         </div>
 
       <div class="box">
           <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 XXX-XXX-XXXX</p>
+          <p> <i class="fas fa-phone"></i>+91 9309785154</p>
           <p> <i class="fas fa-envelope"></i>vedika.lohiya22@gmail.com</p>
           <p> <i class="fas fa-map-marked-alt"></i>Nanded, India-412206</p>
           <div class="share">
