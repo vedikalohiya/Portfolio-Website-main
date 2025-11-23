@@ -60,7 +60,7 @@ $(document).ready(function () {
 
     // Typed.js effect
     var typed = new Typed(".typing-text", {
-        strings: ["frontend development", "backend development", "web designing", "Python", "web development"],
+        strings: ["frontend development", "backend development", "data analysis", "web designing", "Python", "web development"],
         loop: true,
         typeSpeed: 50,
         backSpeed: 25,
@@ -137,4 +137,73 @@ $(document).ready(function () {
     // Load skills and projects
     fetchData("skills").then(showSkills);
     fetchData("projects").then(showProjects);
+
+    // Scroll Reveal Animation
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 2000,
+        reset: false
+    });
+
+    // Home Section
+    sr.reveal('.home .content h2', { delay: 100 });
+    sr.reveal('.home .content p', { delay: 200 });
+    sr.reveal('.home .content .btn', { delay: 300 });
+    sr.reveal('.home .content .socials', { delay: 400 });
+    sr.reveal('.home .image', { delay: 200, origin: 'right' });
+
+    // About Section
+    sr.reveal('.about .heading', { delay: 100 });
+    sr.reveal('.about .row .image', { delay: 200, origin: 'left' });
+    sr.reveal('.about .row .content', { delay: 300, origin: 'right' });
+
+    // Skills Section
+    sr.reveal('.skills .heading', { delay: 100 });
+    sr.reveal('.skills .container', { delay: 200 });
+    sr.reveal('.skills .container .bar', { 
+        delay: 100, 
+        interval: 100,
+        origin: 'bottom'
+    });
+
+    // Education Section
+    sr.reveal('.education .heading', { delay: 100 });
+    sr.reveal('.education .qoute', { delay: 200 });
+    sr.reveal('.education .box-container .box', { 
+        delay: 200,
+        interval: 150,
+        origin: 'bottom'
+    });
+
+    // Projects Section
+    sr.reveal('.projects .heading', { delay: 100 });
+    sr.reveal('.projects .box-container .box', { 
+        delay: 200,
+        interval: 150,
+        origin: 'bottom'
+    });
+
+    // Contact Section
+    sr.reveal('.contact .heading', { delay: 100 });
+    sr.reveal('.contact .container', { delay: 200 });
+
+    // Add smooth hover effect for all buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('mouseenter', function(e) {
+            e.target.style.transform = 'translateY(-3px)';
+        });
+        btn.addEventListener('mouseleave', function(e) {
+            e.target.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Add parallax effect to hero section
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.home');
+        if (parallax) {
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+    });
 });

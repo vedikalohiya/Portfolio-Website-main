@@ -1,5 +1,9 @@
 [
     {
+        "name": "C++",
+        "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"
+    },
+    {
         "name": "Python",
         "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
     },
@@ -16,8 +20,16 @@
         "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
     },
     {
+        "name": "React.js",
+        "icon": "https://img.icons8.com/color/48/000000/react-native.png"
+    },
+    {
         "name": "Node.js",
         "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
+    },
+    {
+        "name": "Express.js",
+        "icon": "https://img.icons8.com/color/48/000000/express-js.png"
     },
     {
         "name": "MongoDB",
@@ -26,6 +38,10 @@
     {
         "name": "MySQL",
         "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+    },
+    {
+        "name": "Firebase",
+        "icon": "https://img.icons8.com/color/48/000000/firebase.png"
     },
     {
         "name": "Git",
