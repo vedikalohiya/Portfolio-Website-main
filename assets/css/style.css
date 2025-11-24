@@ -15,11 +15,15 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   font-family: "Poppins", sans-serif;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *::selection {
@@ -135,12 +139,16 @@ header .navbar ul li a {
   text-decoration: none;
   letter-spacing: 0.04rem;
   transition: 0.2s;
+  padding: 0.5rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 header .navbar ul li a.active,
 header .navbar ul li a:hover {
   color: #011aff;
   border-bottom: 0.2rem solid #011aff;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
 }
 /* navbar ends */
 
@@ -313,7 +321,7 @@ header .navbar ul li a:hover {
 }
 .home .btn {
   margin-top: 1rem;
-  position: absolute;
+  display: inline-block;
   line-height: 0;
   padding: 1.8rem 3.5rem;
   border-radius: 5rem;
@@ -325,6 +333,8 @@ header .navbar ul li a:hover {
   border: 2px solid rgba(255, 255, 255, 0.3);
   animation: fadeInUp 1.5s ease-out;
   cursor: pointer;
+  min-height: 44px;
+  touch-action: manipulation;
 }
 .home .btn span {
   font-weight: 700;
@@ -404,21 +414,67 @@ header .navbar ul li a:hover {
 /* social icons end */
 
 /* hero media queries starts*/
-@media (max-width: 450px) {
-  .home .btn {
-    margin: 4rem 0;
+@media (max-width: 768px) {
+  .home {
+    padding: 2rem 5%;
   }
-  .socials {
-    margin-top: 12rem;
+  .home .content {
+    text-align: center;
   }
-  .home .image img {
-    margin-top: -12rem;
+  .home .content h2 {
+    font-size: 3.5rem;
+  }
+  .home .content h2 span {
+    font-size: 3.5rem;
   }
   .home .content p {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .home .content p span {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+  .home .image {
+    text-align: center;
+  }
+  .home .image img {
+    width: 80%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .home {
+    flex-direction: column;
+    padding: 2rem 3%;
+  }
+  .home .content h2 {
+    font-size: 3rem;
+  }
+  .home .content h2 span {
+    font-size: 3rem;
+  }
+  .home .content p {
+    font-size: 1.8rem;
+  }
+  .home .content p span {
+    font-size: 1.8rem;
+  }
+  .home .btn {
+    margin: 2rem 0;
+  }
+  .home .image img {
+    width: 90%;
+    margin: 2rem auto;
+  }
+  .socials {
+    margin-top: 2rem;
   }
 }
 /* hero media queries ends*/
@@ -1680,19 +1736,269 @@ body.dark-mode {
 }
 
 /* Responsive Design */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 2rem 5%;
+  }
+  .heading {
+    font-size: 3.5rem;
+  }
+}
+
 @media (max-width: 768px) {
-    .projects .box-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .projects .box .image {
-        height: 25rem;
-    }
-    
-    .projects .box .content {
-        padding: 2rem;
-    }
+  html {
+    font-size: 52%;
+  }
+  
+  header {
+    padding: 1.5rem 5%;
+  }
+  
+  section {
+    padding: 2rem 3%;
+  }
+  
+  .heading {
+    font-size: 3rem;
+  }
+  
+  /* About section */
+  .about .row {
+    padding: 2rem;
+    flex-direction: column;
+  }
+  
+  .about .row .image img {
+    width: 100%;
+    max-width: 30rem;
+    margin: 2rem auto;
+  }
+  
+  .about .content {
+    text-align: center;
+  }
+  
+  .about .box-container .box {
+    padding: 1rem;
+  }
+  
+  /* Skills section */
+  .skills .container {
+    padding: 2rem;
+  }
+  
+  .skills .container .row {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Projects section */
+  .projects .box-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .projects .box .image {
+    height: 25rem;
+  }
+  
+  .projects .box .content {
+    padding: 2rem;
+  }
+  
+  /* Contact section */
+  .contact .container {
+    flex-direction: column;
+  }
+  
+  .contact .image-box {
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto 2rem;
+  }
+  
+  .contact form {
+    width: 100%;
+  }
+  
+  /* Footer */
+  .footer .box-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  
+  header {
+    padding: 1.5rem 3%;
+  }
+  
+  header .logo {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 2rem;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+  }
+  
+  /* About section */
+  .about .row {
+    padding: 1rem;
+  }
+  
+  .about .row .image img {
+    width: 100%;
+    margin: 1rem auto;
+  }
+  
+  .about .content h3 {
+    font-size: 2.5rem;
+  }
+  
+  .about .content .tag {
+    font-size: 1.8rem;
+  }
+  
+  .about .content p {
+    font-size: 1.5rem;
+  }
+  
+  .about .box-container .box p {
+    font-size: 1.4rem;
+  }
+  
+  /* Skills section */
+  .skills .container .row {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skills .container .bar {
+    padding: 1.5rem;
+  }
+  
+  .skills .container .bar .info span {
+    font-size: 1.4rem;
+  }
+  
+  /* Education section */
+  .education .box-container .box {
+    padding: 2rem 1rem;
+  }
+  
+  /* Projects section */
+  .projects .box .content h3 {
+    font-size: 2rem;
+  }
+  
+  .projects .box .content p {
+    font-size: 1.4rem;
+  }
+  
+  /* Contact section */
+  .contact form .form-group .field input,
+  .contact form .message textarea {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .contact form .button-area button {
+    font-size: 1.6rem;
+    padding: 1.2rem 3rem;
+  }
+  
+  /* Footer */
+  .footer .box h3 {
+    font-size: 2rem;
+  }
+  
+  .footer .box p,
+  .footer .box a {
+    font-size: 1.4rem;
+  }
+  
+  .footer .credit {
+    font-size: 1.6rem;
+  }
+}
+
+/* Extra small devices (phones in portrait mode) */
+@media (max-width: 375px) {
+  html {
+    font-size: 48%;
+  }
+  
+  header .logo {
+    font-size: 1.8rem;
+  }
+  
+  .heading {
+    font-size: 2.2rem;
+  }
+  
+  .home .content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .home .content h2 span {
+    font-size: 2.5rem;
+  }
+  
+  section {
+    padding: 1.5rem;
+  }
+}
+
+/* Landscape mode for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home {
+    min-height: auto;
+    padding: 8rem 5% 4rem;
+  }
+  
+  .home .content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .home .content h2 span {
+    font-size: 2.5rem;
+  }
+  
+  .home .content p {
+    font-size: 1.6rem;
+  }
+  
+  .home .image img {
+    width: 60%;
+  }
+  
+  section {
+    min-height: auto;
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .home {
+    min-height: -webkit-fill-available;
+  }
+  
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
 }
 
 input[type="email"] {
