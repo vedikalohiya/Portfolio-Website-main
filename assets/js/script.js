@@ -134,9 +134,9 @@ $(document).ready(function () {
         });
     }
 
-    // Load skills and projects
-    fetchData("skills").then(showSkills);
-    fetchData("projects").then(showProjects);
+    // Load skills and projects (disabled to prevent overriding static HTML)
+    // fetchData("skills").then(showSkills);
+    // fetchData("projects").then(showProjects);
 
     // Scroll Reveal Animation
     const sr = ScrollReveal({
