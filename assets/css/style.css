@@ -31,7 +31,7 @@ header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 2rem 9%;
   background: rgba(11, 12, 16, 0.85);
-  backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .logo { font-size: 2.5rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 1rem; }
@@ -64,16 +64,18 @@ section { padding: 10rem 9% 4rem; min-height: 100vh; }
 
 /* Glassmorphism Common Class */
 .glass-box {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 12px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateZ(0); -webkit-transform: translateZ(0);
+  will-change: transform;
 }
 .glass-box:hover {
-  transform: translateY(-5px);
-  border-color: rgba(176, 106, 179, 0.3);
-  box-shadow: 0 10px 40px rgba(176, 106, 179, 0.15);
+  transform: translateY(-5px) translateZ(0);
+  border-color: rgba(176, 106, 179, 0.25);
+  box-shadow: 0 10px 30px rgba(176, 106, 179, 0.1);
 }
 
 /* Buttons */
@@ -123,12 +125,12 @@ section { padding: 10rem 9% 4rem; min-height: 100vh; }
 .skills h3 { font-size: 2.2rem; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 2rem; }
 .skills .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
 .skills .bar {
-  background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 12px;
   padding: 2.5rem; display: flex; justify-content: center; align-items: center;
-  transition: 0.3s;
+  transition: 0.3s; transform: translateZ(0); will-change: transform;
 }
-.skills .bar:hover { transform: translateY(-5px); border-color: rgba(176, 106, 179, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3);}
+.skills .bar:hover { transform: translateY(-3px) translateZ(0); border-color: rgba(176, 106, 179, 0.25); box-shadow: 0 8px 25px rgba(0,0,0,0.2);}
 .skills .info { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
 .skills .info i { font-size: 4rem; color: #4568dc;}
 .skills .info span { font-size: 1.6rem; color: #ddd; font-weight: 500; }
@@ -140,14 +142,14 @@ section { padding: 10rem 9% 4rem; min-height: 100vh; }
 
 /* Common Card style (.box / .achievement-box / .container .content) */
 .education .box, .projects .box, .achievements .achievement-box, .experience .content {
-  background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 16px;
   padding: 3rem; transition: transform 0.3s, box-shadow 0.3s;
-  display: flex; flex-direction: column; gap: 1.5rem;
+  display: flex; flex-direction: column; gap: 1.5rem; transform: translateZ(0); will-change: transform;
 }
 .education .box:hover, .projects .box:hover, .achievements .achievement-box:hover, .experience .content:hover {
-  transform: translateY(-8px); border-color: rgba(176, 106, 179, 0.3);
-  box-shadow: 0 10px 40px rgba(176, 106, 179, 0.15);
+  transform: translateY(-5px) translateZ(0); border-color: rgba(176, 106, 179, 0.25);
+  box-shadow: 0 8px 30px rgba(176, 106, 179, 0.1);
 }
 
 /* Card Content Details */
@@ -196,7 +198,7 @@ section { padding: 10rem 9% 4rem; min-height: 100vh; }
 
 /* Contact Form */
 .contact { min-height: 80vh; }
-.contact .container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.03); backdrop-filter: blur(15px); border-radius: 16px; padding: 4rem; border: 1px solid rgba(255,255,255,0.05); }
+.contact .container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.02); backdrop-filter: blur(5px); border-radius: 16px; padding: 4rem; border: 1px solid rgba(255,255,255,0.04); transform: translateZ(0); }
 .contact .image-box { display: none; } /* Hide the light illustration to keep dark theme clean */
 .contact form { display: flex; flex-direction: column; gap: 2.5rem; }
 .contact .field, .contact .message { position: relative; width: 100%;}
