@@ -97,6 +97,7 @@ section { padding: 10rem 9% 4rem; min-height: 100vh; }
 .home .image { flex: 1 1 40rem; display: flex; justify-content: center; }
 .home .image img {
   width: 70%; max-width: 350px; border-radius: 50%;
+  aspect-ratio: 1 / 1; object-fit: cover;
   border: 4px solid rgba(176, 106, 179, 0.3);
   box-shadow: 0 0 50px rgba(69, 104, 220, 0.3);
 }
@@ -107,8 +108,8 @@ section { padding: 10rem 9% 4rem; min-height: 100vh; }
 /* About Section */
 .about .row { display: flex; gap: 5rem; align-items: center; flex-wrap: wrap; }
 .about .image { flex: 1 1 35rem; text-align: center; }
-.about .image img { width: 80%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
-.about .content { flex: 1 1 45rem; background: rgba(255,255,255,0.02); padding: 4rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);}
+.about .image img { width: 80%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); object-fit: cover;}
+.about .content { flex: 1 1 45rem; padding: 3rem; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(5px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.04); transform: translateZ(0);}
 .about h3 { font-size: 3rem; color: #fff; margin-bottom: 1rem; }
 .about .tag { display: inline-block; padding: 0.5rem 1.5rem; background: rgba(176, 106, 179, 0.15); color: #e9a8f0; border-radius: 20px; font-size: 1.4rem; margin-bottom: 2rem; font-weight: 500;}
 .about p { font-size: 1.6rem; color: #aaa; line-height: 1.8; margin-bottom: 3rem; }
